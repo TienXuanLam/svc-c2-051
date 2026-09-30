@@ -1,0 +1,48 @@
+# Runtime parameters (distinct from config/agent.yaml, the static manifest).
+# No HITL: CSM verification of the draft against source systems is an
+# out-of-band human process (proposal §4/§9), not a technical interrupt()
+# checkpoint — a mandatory-disclaimer pattern is used instead of HITL for
+# this template.
+max_retry: 3
+memory_enabled: false
+timeout_s: 30
+
+# Four-dimension health-score compositing weights (proposal §10/§12:
+# "dimension weighting is the key precision variable"; Gainsight/Totango's
+# exact proprietary formulas are not public, so this equal-weight default is
+# ILLUSTRATIVE, not a verified Gainsight-derived value). Must sum to 1.0 —
+# validated at agent.compile() time. Calibrate to your own customer segment
+# before production use — see docs/07_operation_guide.md "Health Scoring
+# Setup".
+dimension_weights:
+  product_adoption: 0.25
+  support_health: 0.25
+  relationship: 0.25
+  commercial_risk: 0.25
+
+# Composite-score risk-tier cut-points — taken directly from the proposal's
+# own explicit §4 table (Red < 40, Yellow 40-65, Green > 65), not a
+# fabricated citation.
+risk_thresholds:
+  red_max: 40
+  yellow_max: 65
+
+# Renewal early-warning windows in days (proposal §9: "structured risk
+# detection 60-90 days before renewal creates intervention lead time").
+renewal_warning_days: [60, 90]
+
+# Intervention KB (risk tier x weakest-dimension matrix) — institution-
+# configurable path to a versioned KB JSON file (schema:
+# src/services/kb/intervention_matrix.json, which must set
+# provenance_verified: true once the institution has verified it against a
+# cited CS playbook). Uncomment and point at an institution-specific
+# playbook to override the shipped UNVERIFIED SAMPLE reference KB
+# (provenance_verified: false — see docs/07_operation_guide.md
+# "Intervention KB Setup"). Loading is fail-closed
+# (src/services/intervention_recommend_service.py) — a missing/invalid file
+# fails agent.compile(), it never falls back to a silent default. This file
+# is read by src/api/server.py at process startup — self.config is NOT
+# auto-populated from this file when the agent class is constructed
+# directly/outside AgentRegistry; confirm any custom entry point also loads
+# it.
+# intervention_kb_path: "src/services/kb/intervention_matrix.json"

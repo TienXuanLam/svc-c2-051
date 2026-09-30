@@ -1,0 +1,17 @@
+# Agent Manifest — AgentRegistry entry point
+# This file is required for AgentRegistry auto-discovery (lazy-load architecture)
+
+id: "SVC-C2-051"
+name: "CustomerSuccessRenewalRiskAssessmentAccountHealthReportAgent"
+namespace: "svc"
+version: "0.1.0"
+description: "Customer Success Renewal Risk Assessment & Account Health Report Agent"
+enabled: true
+category: "Cat 2"
+industry: "SVC"
+base_type: "DocGenerationAgent"
+class: "src.graph.graph.CustomerSuccessRenewalRiskAssessmentAccountHealthReportAgent"
+required_trust_level: "VERIFIED_EXTERNAL"
+requires:
+  secrets: []
+  extras: []

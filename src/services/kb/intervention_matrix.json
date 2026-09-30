@@ -1,0 +1,21 @@
+{
+  "kb_version": "SAMPLE-2024.1",
+  "source": "SAMPLE DATA — general alignment with Gainsight/Totango-style CS intervention playbooks, NOT sourced from a specific cited section of either vendor's proprietary methodology. Must be replaced with an institution-verified playbook before production use.",
+  "provenance_verified": false,
+  "last_reviewed": "2026-07-19",
+  "institution_scope_note": "This recommendation reflects an unverified sample CS playbook only. Institution-specific application is the responsibility of the Customer Success leadership team.",
+  "recommendations": {
+    "Red:product_adoption": "Executive escalation: schedule an urgent adoption workshop and assign a dedicated onboarding specialist to reverse the usage decline.",
+    "Red:support_health": "Executive escalation: convene a support review with engineering leadership to resolve the outstanding ticket backlog and prevent further severity escalation.",
+    "Red:relationship": "Executive escalation: arrange an executive-to-executive check-in to rebuild relationship trust before the renewal decision.",
+    "Red:commercial_risk": "Executive escalation: initiate a pricing/packaging review to realign contract scope with actual usage before renewal.",
+    "Yellow:product_adoption": "Schedule a targeted training session on underused features to improve adoption trend.",
+    "Yellow:support_health": "Conduct a QBR focused on recent support themes; assign a technical account manager if ticket volume persists.",
+    "Yellow:relationship": "Schedule a QBR to re-engage the account team and confirm stakeholder alignment.",
+    "Yellow:commercial_risk": "Review contract utilization with the account team; consider a right-sizing or expansion conversation.",
+    "Green:product_adoption": "Maintain regular adoption check-ins; no urgent action required.",
+    "Green:support_health": "Continue standard support cadence; no urgent action required.",
+    "Green:relationship": "Continue standard relationship touchpoints; consider this account for a case-study or testimonial conversation.",
+    "Green:commercial_risk": "Continue standard commercial cadence; consider a proactive expansion conversation given healthy utilization."
+  }
+}
